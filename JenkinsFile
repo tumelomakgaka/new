@@ -1,0 +1,11 @@
+node {
+   stage('Preparation') {
+      git 'https://github.com/tumelomakgaka/new.git'
+   }
+   stage('Build') {
+      sh "./gradlew clean test"
+   }
+   stage('Deploy') {
+      sh "git push https://git.heroku.com/secret-ravine-93206.git master"
+   }
+}
