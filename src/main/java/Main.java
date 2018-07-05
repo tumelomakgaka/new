@@ -31,7 +31,9 @@ public class Main {
 
         .handlers(chain -> chain
             .get(ctx -> ctx.render(groovyTemplate("index.html")))
-
+            .get("testing", ctx -> {
+                ctx.render("look at this!");
+            })
             .get("hello", ctx -> {
               ctx.render("Hello!");
             })
